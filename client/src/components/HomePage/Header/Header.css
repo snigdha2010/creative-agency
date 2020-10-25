@@ -1,0 +1,5 @@
+.header-bacground{
+    background-color: #FBD062 ;
+    height: 650px;
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 90%);
+}
