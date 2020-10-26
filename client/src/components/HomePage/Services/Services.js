@@ -17,9 +17,9 @@ const Services = () => {
     return (
         <section className='container text-center mt-5 pt-5'>
             <h5>Provide awesome <span style={{color:'#7AB259'}}> services</span></h5>
-            <div className='row'>
+            <div className='row pt-5'>
                 {
-                    fakeData.map(service =><ServicesCard keys= {service.id}
+                    fakeData.map(service =><ServicesCard key= {service.id}
                     service = {service}
                     ></ServicesCard>)
                 }

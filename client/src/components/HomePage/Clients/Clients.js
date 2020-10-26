@@ -7,7 +7,7 @@ import airbnb from '../../../images/logos/airbnb.png';
 
 const Clients = () => {
     return (
-        <section className='container d-flex justify-content-around'>
+        <section className='container d-flex justify-content-around pt-5'>
             <img style={{height:'30px'}} src={slack} alt=""/>
             <img style={{height:'30px'}} src={google} alt=""/>
             <img style={{height:'30px'}} src={uber} alt=""/>
