@@ -8,6 +8,7 @@ import HomePage from './components/HomePage/HomePage/HomePage';
 
 function App() {
   return (
+    <div className='app'>
     <Router>
       <Switch>
         <Route exact path='/'>
@@ -15,6 +16,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </div>
   );
 }
 

@@ -1,0 +1,7 @@
+.service-card:hover{
+    background-color: white;
+    border-radius: 5px;
+}
+.service-card img{
+    transform: translateY(-45px);
+}
