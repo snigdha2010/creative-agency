@@ -5,6 +5,7 @@ import {
   Route
 } from "react-router-dom";
 import HomePage from './components/HomePage/HomePage/HomePage';
+import DashBoard from './components/DashBoard/DashBoard/DashBoard';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <HomePage/>
+        </Route>
+        <Route path='/dashboard'>
+           <DashBoard/>
         </Route>
       </Switch>
     </Router>

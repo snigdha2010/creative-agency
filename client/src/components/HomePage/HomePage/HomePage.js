@@ -7,8 +7,9 @@ import FeedBack from '../FeedBack/FeedBack';
 import Footer from '../Footer/Footer';
 
 const HomePage = () => {
+ 
     return (
-        <div>
+        <div style={{backgroundColor:'#E5E5E5'}} >
             <Header></Header>
             <Clients/>
             <Services/>

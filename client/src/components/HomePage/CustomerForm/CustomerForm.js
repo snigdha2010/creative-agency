@@ -4,9 +4,9 @@ const CustomerForm = () => {
     return (
         <section className='container pt-5 pb-5 mb-3'>
             <div className='row'>
-                <div className='col-md-6 '>
-                    <div style={{textAlign:'left'}}>
-                    <h5>strong Let us handle your <br/> project, professionally</h5>
+                <div className='col-md-6 p-3'>
+                    <div  className='align-left'>
+                    <h5>Let us handle your <br/> project, professionally</h5>
                     <small>With well written codes, we build amazing apps for all platforms, mobile and web apps in general.</small>
                     </div>
                 </div>

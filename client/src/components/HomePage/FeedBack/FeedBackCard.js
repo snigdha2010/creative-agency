@@ -6,8 +6,8 @@ const FeedBackCard = ({feedback}) => {
             <div style={{border:'1px solid lightGrey', backgroundColor:'#E5E5E5'}} className='card p-3'>
                 <div className='card-body'>
             <div className='d-flex'>
-                <img height='50px' src={feedback.img} alt=""/>
-                <div className='p-2 card-title'>
+                <div className='mt-3 pr-2'><img height='50px' src={feedback.img} alt=""/></div>
+                <div className='p-2 card-title align-left'>  
                 <h5>{feedback.name}</h5>
                 <h6>{feedback.title}</h6>
                 </div>
