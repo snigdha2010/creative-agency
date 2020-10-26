@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import Clients from '../Clients/Clients';
 import Services from '../Services/Services';
 import SampleWork from '../SampleWork/SampleWork';
+import FeedBack from '../FeedBack/FeedBack';
 
 const HomePage = () => {
     return (
@@ -11,6 +12,7 @@ const HomePage = () => {
             <Clients/>
             <Services/>
             <SampleWork/>
+            <FeedBack/>
         </div>
     );
 };

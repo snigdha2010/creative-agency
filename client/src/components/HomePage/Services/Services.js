@@ -15,7 +15,7 @@ const Services = () => {
     
     ]
     return (
-        <section className='container text-center mt-5 pt-5'>
+        <section className='container text-center mt-5 pt-5 mb-5'>
             <h5>Provide awesome <span style={{color:'#7AB259'}}> services</span></h5>
             <div className='row pt-5'>
                 {
