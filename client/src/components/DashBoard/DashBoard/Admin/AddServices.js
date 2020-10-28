@@ -39,7 +39,7 @@ const AddServices = () => {
                         <input onBlur={handleBlur} type="text" className="form-control" name="title" placeholder="Enter title" />
                     </div>
                     <div className="form-group">
-                        <input onBlur={handleBlur} type="text" className="form-control" name="description" placeholder="Enter Designation" />
+                        <textarea name="description"  onBlur={handleBlur} col='5' rows='5' className="form-control" placeholder="Enter Designation"></textarea>
                     </div>
                     <div className="form-group">
                         <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Upload image" />

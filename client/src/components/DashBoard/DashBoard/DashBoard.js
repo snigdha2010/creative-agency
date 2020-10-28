@@ -1,18 +1,18 @@
 import React from 'react';
 import DashBoradHeader from './DashBoradHeader';
 import SideBar from './SideBar/SideBar';
-import ServiceOrder from './ServiceOrder/ServiceOrder';
+import ServiceOrder from './Customer/ServiceOrder';
 import {
     BrowserRouter as Router,
     Switch,
     Route
   } from "react-router-dom";
-import ServiceList from './ServiceList/ServiceList';
-import CustomerReview from './Review/Review';
+import ServiceList from './Customer/ServiceOrderList';
+import CustomerReview from './Customer/Review';
 import Admin from './Admin/AddAdmin';
 import AddServices from './Admin/AddServices';
 
-const DashBoard = ({match}) => {
+const DashBoard = () => {
     return (
         <main>
             <DashBoradHeader/>
