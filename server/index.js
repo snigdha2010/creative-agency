@@ -41,10 +41,10 @@ client.connect(err => {
 
   //get order list 
   app.get('/service-list',(req,res)=>{
-        OrderCollection.find({})
-      .toArray((err,documet)=>{
-          res.send(documet)
-      })
+    OrderCollection.find({})
+    .toArray((err,documet)=>{
+        res.send(documet)
+    })
   })
   //add review
   app.post('/addReview',(req,res)=>{
@@ -83,6 +83,21 @@ client.connect(err => {
         res.send(result.insertedCount > 0)
     })
     console.log(file) 
+})
+
+//get services 
+app.get('/services',(req,res)=>{
+    ServiceCollection.find({})
+    .toArray((err,document)=>{
+        res.send(document)
+    })
+})
+//get custome feedback/review
+app.get('/customer/reviews',(req,res)=>{
+    ReviewCollection.find({}).limit(6)
+    .toArray((err,document)=>{
+        res.send(document)
+    })
 })
  
 });
