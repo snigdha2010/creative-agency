@@ -4,7 +4,7 @@ import { UserContext } from '../../../../App';
 
 const CustomerReview = () => {
     const { register, handleSubmit,  errors } = useForm();
-    const [signedInUser, setSignedInUser] = useContext(UserContext);
+    const { signedInUser, setSignedInUser } = useContext(UserContext);
     console.log()
     const onSubmit = data => {
         const newData = {...data, img: signedInUser.image}

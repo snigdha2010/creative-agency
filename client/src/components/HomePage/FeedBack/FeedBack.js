@@ -1,9 +1,5 @@
-import React, { useEffect, useState, useContext } from 'react';
-import customer1 from '../../../images/customer-1.png';
-import customer2 from '../../../images/customer-2.png';
-import customer3 from '../../../images/customer-3.png';
+import React, { useEffect, useState } from 'react';
 import FeedBackCard from './FeedBackCard';
-import { UserContext } from '../../../App';
 
 const FeedBack = () => {
     const [ feedBack, setFeedBack ] = useState([]);

@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
 const NavBar = () => {
-  const [signedInUser, setSignedInUser] = useContext(UserContext);
+  const {signedInUser, setSignedInUser} = useContext(UserContext);
   const handleSignOut = ()=>{
-    sessionStorage.removeItem('token');
     setSignedInUser({});
   }
     return (
@@ -31,15 +30,15 @@ const NavBar = () => {
                   <a className="nav-link mr-3" href="/contact">Contact us</a>
                 </li> 
                 {
-                  (signedInUser.name || sessionStorage.getItem('token')) && 
+                  signedInUser && 
                     <li className="nav-item">
-                    <span>{signedInUser.name}</span>
+                    <span className='pr-2'>{signedInUser.name}</span>
                     <Link to = '/'><button onClick={handleSignOut} className="btn btn-brand my-2 my-sm-0" type="submit">LogOut</button></Link>
                     
                   </li>
                 }
                 {
-                  !(signedInUser.name || sessionStorage.getItem('token')) &&
+                  !(signedInUser ) &&
                   <li className="nav-item">
                     <Link to = '/dashboard'><button className="btn btn-brand my-2 my-sm-0" type="submit">Login</button></Link>
                   </li>

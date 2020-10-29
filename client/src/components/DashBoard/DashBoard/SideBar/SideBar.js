@@ -4,7 +4,7 @@ import './SideBar.css';
 import { UserContext } from '../../../../App';
 
 const SideBar = () => {
-    const [ signedInUser, setSignedInUser ] = useContext(UserContext);
+    const { signedInUser, setSignedInUser } = useContext(UserContext);
     const [ admin,setAdmin ] = useState(false);
     useEffect(()=>{
         fetch('https://fast-bastion-55056.herokuapp.com/isAdmin',{

@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import service1 from '../../../images/icons/service1.png';
-import service2 from '../../../images/icons/service2.png';
-import service3 from '../../../images/icons/service3.png';
-import service4 from '../../../images/icons/service4.png';
 import ServicesCard from '../ServicesCard/ServicesCard';
 
 const Services = () => {

@@ -3,8 +3,9 @@ import Service from './Service';
 import { UserContext } from '../../../../App';
 
 const ServiceList = () => {
-    const [signedInUser, setSignedInUser] = useContext(UserContext);
+    const {signedInUser, setSignedInUser} = useContext(UserContext);
     const [ services, setServices ] = useState([]);
+    
     useEffect(()=>{
         fetch('https://fast-bastion-55056.herokuapp.com/customer-order-list',{
             method: 'POST',

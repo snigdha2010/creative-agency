@@ -5,10 +5,9 @@ import { Link, useLocation } from 'react-router-dom';
 
 const DashBoradHeader = () => {
 
-  const [ signedInUser, setSignedInUser ] = useContext(UserContext);
+  const { signedInUser, setSignedInUser } = useContext(UserContext);
   const location = useLocation();
   const handleSignOut = ()=>{
-    sessionStorage.removeItem('token');
     setSignedInUser({});
   }
   // const handleHeader = ()=> {
@@ -36,15 +35,15 @@ const DashBoradHeader = () => {
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                 {
-                  ( sessionStorage.getItem('token')) && 
+                  signedInUser.name && 
                     <li className="nav-item">
-                    <span>{signedInUser.name}</span>
+                    <span className='pr-1'>{signedInUser.name}</span>
                     <Link to = '/'><button onClick={handleSignOut} className="btn btn-brand my-2 my-sm-0" type="submit">LogOut</button></Link>
                     
                   </li>
                 }
                 {
-                  !(sessionStorage.getItem('token')) &&
+                  !signedInUser.name &&
                   <li className="nav-item">
                     <Link to = '/dashboard'><button className="btn btn-brand my-2 my-sm-0" type="submit">Login</button></Link>
                   </li>
