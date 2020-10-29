@@ -3,6 +3,7 @@ const cors = require('cors');
 require('dotenv').config()
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
+const e = require('express');
 const MongoClient = require('mongodb').MongoClient;
 
 
@@ -32,21 +33,46 @@ client.connect(err => {
           size: file.size,
           img: Buffer.from(encImg,'base64')
       };
-      OrderCollection.insertOne({name,image})
+      OrderCollection.insertOne({name,image,email})
       .then(result =>{
           res.send(result.insertedCount > 0)
       })
-      console.log(file) 
+      
+  })
+  //get servic filtered for customer
+  app.post('/customer-order-list',(req,res)=>{
+      console.log('mm',req.body)
+      const email = req.body.email
+      AdminCollection.find({email:email})
+      .toArray((err,admin)=>{
+          console.log('body',admin)
+          const customer = {}
+          if(admin.length === 0){
+              customer.email = email;
+              console.log(customer)
+          }
+          
+          OrderCollection.find(customer)
+          .toArray((err,documents)=>{
+              res.send(documents)
+          })
+      
+      })
   })
 
-  //get order list 
-  app.get('/service-list',(req,res)=>{
-    OrderCollection.find({})
-    .toArray((err,documet)=>{
-        res.send(documet)
+  //get service list for admin
+
+  app.post('/admin-order-list',(req,res)=>{
+    const email = req.body.email
+    AdminCollection.find({email:email})
+    .toArray((err,admin)=>{
+        OrderCollection.find({})
+        .toArray((err,document)=>{
+            res.send(document)
+        })
     })
-  })
-  //add review
+})
+    
   app.post('/addReview',(req,res)=>{
         const review = req.body;
         ReviewCollection.insertOne({review})
@@ -56,13 +82,20 @@ client.connect(err => {
   })
   //add admin 
   app.post('/addAdmin',(req,res)=>{
-     const admin = req.body;
-     AdminCollection.insertOne({admin})
+     const email = req.body.email;
+     AdminCollection.insertOne({email})
      .then(result =>{
          res.send(result.insertedCount>0)
      })
   })
-  //find admin 
+  //get admin
+  app.post('/isAdmin',(req,res)=>{
+    const email = req.body.email
+    AdminCollection.find({email:email})
+    .toArray((err,document)=>{
+        res.send(document.length>0)
+    })
+})
 
 
   //add service
