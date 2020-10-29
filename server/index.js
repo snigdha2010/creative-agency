@@ -20,6 +20,7 @@ client.connect(err => {
   const ReviewCollection = client.db("creative-agency").collection("reviews");
   const AdminCollection = client.db("creative-agency").collection("admins");
   const ServiceCollection = client.db("creative-agency").collection("services");
+
   //add customer order to server with image 
   app.post('/addOrder',(req,res)=>{
       const file = req.files.file;
@@ -95,9 +96,7 @@ client.connect(err => {
         res.send(document.length>0)
     })
 })
-
-
-  //add service
+//add service
   app.post('/addService',(req,res)=>{
     const file = req.files.file;
     const title = req.body.title; 
@@ -131,6 +130,7 @@ app.get('/customer/reviews',(req,res)=>{
         res.send(document)
     })
 })
+
  
 });
 
