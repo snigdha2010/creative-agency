@@ -3,8 +3,8 @@ import React from 'react';
 const Service = ({service}) => {
     return (
         
-            <div className='col-md-6'>
-                <div className='card pt-3'>
+            <div className='col-md-6 mb-5'>
+                <div className='card p-3'>
                 { service.image && 
                 <img style={{height: '200px'}}  src={`data:image/png;base64,${service.image.img}`} alt=""/>
                 }  

@@ -30,7 +30,6 @@ const NavBar = () => {
                 <li className="nav-item">
                   <a className="nav-link mr-3" href="/contact">Contact us</a>
                 </li> 
-                <li className="nav-item" >
                 {
                   (signedInUser.name || sessionStorage.getItem('token')) && 
                     <li className="nav-item">
@@ -42,9 +41,9 @@ const NavBar = () => {
                 {
                   !(signedInUser.name || sessionStorage.getItem('token')) &&
                   <li className="nav-item">
-                    <Link to = '/log-in'><button className="btn btn-brand my-2 my-sm-0" type="submit">Login</button></Link>
+                    <Link to = '/dashboard'><button className="btn btn-brand my-2 my-sm-0" type="submit">Login</button></Link>
                   </li>
-                }</li>
+                }
               </ul>
             </div>
           </nav>

@@ -17,7 +17,7 @@ export const UserContext = createContext();
 function App() {
 
   const [signedInUser, setSignedInUser] = useState({});
-  console.log(signedInUser);
+ 
   return (
     <div className='app'>
     <UserContext.Provider value={[signedInUser, setSignedInUser]} >

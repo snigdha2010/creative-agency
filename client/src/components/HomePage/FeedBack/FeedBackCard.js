@@ -6,13 +6,13 @@ const FeedBackCard = ({feedback}) => {
             <div style={{border:'1px solid lightGrey', backgroundColor:'#E5E5E5'}} className='card p-3'>
                 <div className='card-body'>
             <div className='d-flex'>
-                <div className='mt-3 pr-2'><img height='50px' src={feedback.img} alt=""/></div>
+                <div className='mt-3 pr-2'><img style={{borderRadius:'50%'}} height='50px' src={feedback.review.img} alt=""/></div>
                 <div className='p-2 card-title align-left'>  
-                <h5>{feedback.name}</h5>
-                <h6>{feedback.title}</h6>
+                <h5>{feedback.review.name}</h5>
+                <h6>{feedback.review.company}</h6>
                 </div>
             </div>
-            <p style={{textAlign:'left'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ipsam sint quisquam incidunt! Repudiandae, omnis.</p>
+            <p style={{textAlign:'left'}}>{feedback.review.description}</p>
         </div></div>
         </div>
        
