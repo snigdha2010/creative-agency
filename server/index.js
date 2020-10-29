@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(fileUpload());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_USER}@cluster0.1sg5c.mongodb.net/creative-agency?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.1sg5c.mongodb.net/creative-agency?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true ,useUnifiedTopology: true });
 client.connect(err => {
   const OrderCollection = client.db("creative-agency").collection("orders");
