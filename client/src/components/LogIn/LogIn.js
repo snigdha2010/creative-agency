@@ -22,8 +22,6 @@ const location = useLocation();
 const { from } = location.state || { from: { pathname: "/" } };
   
 
-
-
 const handleSubmit = () =>{
     var provider = new firebase.auth.GoogleAuthProvider(); 
     firebase.auth().signInWithPopup(provider)
@@ -31,9 +29,9 @@ const handleSubmit = () =>{
         console.log('signed in',result)
         const {displayName, email,photoURL} = result.user;
         const user = {name:displayName, email, image:photoURL} 
-        setSignedInUser(user)
+        const newUser = {...user}
+        setSignedInUser(newUser)
         storeAuthToken();
-        console.log(signedInUser)
       }).catch(function(error) {
         console.log(error.message)
       });

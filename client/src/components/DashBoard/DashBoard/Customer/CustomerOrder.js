@@ -34,7 +34,7 @@ const ServiceOrder = () => {
             })
         }   
     return (
-        <div className='mb-5'>
+        <div className='mb-5 align-left'>
             <form className='mt-5' onSubmit={handleSubmit}>
                     <div className="form-group">
                         <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Enter email" />
@@ -45,34 +45,8 @@ const ServiceOrder = () => {
                     <div className="form-group">
                         <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Picture" />
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-brand">Submit</button>
                 </form>
-            {/* <form className="p-5" onSubmit={handleSubmit} method="post" >
-            <div className="form-group">
-                <input type="text"  onBlur={handleBlur} placeholder="Your Name/company's name" name="name" className="form-control" />
-            </div>
-            <div className="form-group">
-                <input type="text" onBlur={handleBlur} placeholder="Your email address" className="form-control" />
-                  </div>
-            <div className="form-group">
-                <input type="text" onBlur={handleBlur} placeholder="Graphic design" className="form-control" />
-                </div>
-            <div className="form-group">
-                <input type="text"  onBlur={handleBlur} placeholder="Project Details" className="form-control" />
-                   </div>
-            <div className="form-group row">
-                <div className='col-6'>
-                <input className="form-control" onBlur={handleBlur} placeholder="Price" type="number" />
-                 </div>
-                <div className='col-6'>
-                <input ref={register({ required: true })} className="form-control" name="file" placeholder="Upload project file" type="file" />
-                {errors.file && <span className="text-danger">This field is required</span>}
-                </div> 
-            </div>
-            <div className="form-group text-left">
-                    <button type="submit" className="btn btn-brand">Send</button>
-                </div>
-            </form> */}
         </div>
     );
 };

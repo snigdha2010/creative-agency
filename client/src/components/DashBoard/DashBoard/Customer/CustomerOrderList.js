@@ -16,7 +16,7 @@ const ServiceList = () => {
             setServices(data)
         })
     },[])
-    console.log(services)
+    console.log(signedInUser)
     return (
         <div className='row p-5'>
             {

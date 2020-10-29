@@ -61,7 +61,6 @@ client.connect(err => {
   })
 
   //get service list for admin
-
   app.post('/admin-order-list',(req,res)=>{
     const email = req.body.email
     AdminCollection.find({email:email})
@@ -134,11 +133,5 @@ app.get('/customer/reviews',(req,res)=>{
 })
  
 });
-
-
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
 
 app.listen(process.env.PORT||port)

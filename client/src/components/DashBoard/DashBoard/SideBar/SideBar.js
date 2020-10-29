@@ -15,20 +15,23 @@ const SideBar = () => {
         .then(res=>res.json())
         .then(data => setAdmin(data))
     },[])
-    console.log(admin)
+    const style = {
+        textDecoration:'none',
+        color:'black'
+    }
     return (
         <div className='pt-4'>
              <ul className='list-unstyled'>
                 { !admin&&<div>
-                     <li><Link to='/dashboard'>Order</Link></li>
-                     <li><Link to='/dashboard/customer/service-list'>Service List</Link></li>
-                     <li><Link to='/dashboard/review'>Review</Link></li>
+                     <li><Link className='list-unstyled' to='/dashboard'>Order</Link></li>
+                     <li><Link className='list-unstyled' to='/dashboard/customer/service-list'>Service List</Link></li>
+                     <li><Link className='list-unstyled' to='/dashboard/review'>Review</Link></li>
                  </div>}
                 { admin &&
                 <div>
-                     <li><Link to='/dashboard/admin/makeAdmin'>Make Admin</Link></li>
-                     <li><Link to='/dashboard/admin/addServices'>Add Services</Link></li>
-                     <li><Link to='/dashboard/admin/service-list'>Service List</Link></li>
+                     <li><Link className='list-unstyled' to='/dashboard/admin/makeAdmin'>Make Admin</Link></li>
+                     <li><Link className='list-unstyled' to='/dashboard/admin/addServices'>Add Services</Link></li>
+                     <li><Link className='list-unstyled' to='/dashboard/admin/service-list'>Service List</Link></li>
                  </div>}
 
              </ul>

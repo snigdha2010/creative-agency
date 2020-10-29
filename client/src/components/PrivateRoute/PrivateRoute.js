@@ -4,7 +4,7 @@ import { UserContext } from '../../App';
 
 const PrivateRoute = ({ children, ...rest }) => {
 
-const [signedInUser ] = useContext(UserContext);
+const [ signedInUser, setSignedInUser ] = useContext(UserContext);
 console.log("pp",signedInUser)
     return (
         <Route

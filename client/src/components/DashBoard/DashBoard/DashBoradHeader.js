@@ -21,6 +21,7 @@ const DashBoradHeader = () => {
   // }
   // handleHeader();
   
+  console.log(signedInUser)
         return (
         <div className='pt-5 pl-5'>
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -35,7 +36,7 @@ const DashBoradHeader = () => {
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                 {
-                  (signedInUser.name || sessionStorage.getItem('token')) && 
+                  ( sessionStorage.getItem('token')) && 
                     <li className="nav-item">
                     <span>{signedInUser.name}</span>
                     <Link to = '/'><button onClick={handleSignOut} className="btn btn-brand my-2 my-sm-0" type="submit">LogOut</button></Link>
@@ -43,9 +44,9 @@ const DashBoradHeader = () => {
                   </li>
                 }
                 {
-                  !(signedInUser.name || sessionStorage.getItem('token')) &&
+                  !(sessionStorage.getItem('token')) &&
                   <li className="nav-item">
-                    <Link to = '/log-in'><button className="btn btn-brand my-2 my-sm-0" type="submit">Login</button></Link>
+                    <Link to = '/dashboard'><button className="btn btn-brand my-2 my-sm-0" type="submit">Login</button></Link>
                   </li>
                 }
               </li>
