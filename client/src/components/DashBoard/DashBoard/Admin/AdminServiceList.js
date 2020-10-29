@@ -7,7 +7,7 @@ const AdminServiceList = () => {
     const [signedInUser, setSignedInUser] = useContext(UserContext);
     const [ services, setServices ] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:9000/admin-order-list',{
+        fetch('https://fast-bastion-55056.herokuapp.com/admin-order-list',{
             method: 'POST',
             headers:{ 'content-type': 'application/json' },
             body:JSON.stringify({email:signedInUser.email})

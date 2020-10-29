@@ -5,7 +5,7 @@ const Admin = () => {
     const { register, handleSubmit,  errors } = useForm();
     const onSubmit = (data) => {
         console.log(data)
-        fetch('http://localhost:9000/addAdmin',{
+        fetch('https://fast-bastion-55056.herokuapp.com/addAdmin',{
             method: 'POST',
             headers: {
                'Content-Type':'application/json' 

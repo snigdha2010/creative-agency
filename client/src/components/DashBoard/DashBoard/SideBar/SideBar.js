@@ -7,7 +7,7 @@ const SideBar = () => {
     const [ signedInUser, setSignedInUser ] = useContext(UserContext);
     const [ admin,setAdmin ] = useState(false);
     useEffect(()=>{
-        fetch('http://localhost:9000/isAdmin',{
+        fetch('https://fast-bastion-55056.herokuapp.com/isAdmin',{
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: signedInUser.email })

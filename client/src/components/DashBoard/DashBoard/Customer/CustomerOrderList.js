@@ -6,7 +6,7 @@ const ServiceList = () => {
     const [signedInUser, setSignedInUser] = useContext(UserContext);
     const [ services, setServices ] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:9000/customer-order-list',{
+        fetch('https://fast-bastion-55056.herokuapp.com/customer-order-list',{
             method: 'POST',
             headers:{ 'content-type': 'application/json' },
             body:JSON.stringify({email:signedInUser.email})

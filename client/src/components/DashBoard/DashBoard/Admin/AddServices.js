@@ -20,7 +20,7 @@ const AddServices = () => {
         formData.append('title', info.title);
         formData.append('description', info.description);
 
-        fetch('http://localhost:9000/addService', {
+        fetch('https://fast-bastion-55056.herokuapp.com/addService', {
             method: 'POST',
             body: formData
         })

@@ -8,7 +8,7 @@ const CustomerReview = () => {
     console.log()
     const onSubmit = data => {
         const newData = {...data, img: signedInUser.image}
-        fetch('http://localhost:9000/addReview',{
+        fetch('https://fast-bastion-55056.herokuapp.com/addReview',{
             method: 'POST',
             headers: {
                'Content-Type':'application/json' 

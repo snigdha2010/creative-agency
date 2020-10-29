@@ -8,7 +8,7 @@ import { UserContext } from '../../../App';
 const FeedBack = () => {
     const [ feedBack, setFeedBack ] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:9000/customer/reviews')
+        fetch('https://fast-bastion-55056.herokuapp.com/customer/reviews')
         .then(res=> res.json())
         .then(data => {
         setFeedBack(data);

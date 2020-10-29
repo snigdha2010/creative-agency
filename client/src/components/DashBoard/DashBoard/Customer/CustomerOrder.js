@@ -21,7 +21,7 @@ const ServiceOrder = () => {
         formData.append('name', info.name);
         formData.append('email', info.email);
 
-        fetch('http://localhost:9000/addOrder', {
+        fetch('https://fast-bastion-55056.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
         })
