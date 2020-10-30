@@ -29,7 +29,15 @@ export const handleGoogleSignIn = () => {
       });
   }
 
-
+  export const handleSignOut = () => {
+    return firebase.auth().signOut()
+      .then(() => {
+        return null;
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
 export const  getCurrentUser = () => {
     return new Promise((resolve) => {
       firebase.auth().onAuthStateChanged(function (user) {

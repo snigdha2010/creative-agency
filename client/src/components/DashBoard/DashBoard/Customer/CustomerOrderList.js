@@ -5,7 +5,6 @@ import { UserContext } from '../../../../App';
 const ServiceList = () => {
     const {signedInUser, setSignedInUser} = useContext(UserContext);
     const [ services, setServices ] = useState([]);
-    
     useEffect(()=>{
         fetch('https://fast-bastion-55056.herokuapp.com/customer-order-list',{
             method: 'POST',
@@ -17,14 +16,16 @@ const ServiceList = () => {
             setServices(data)
         })
     },[])
-    console.log(signedInUser)
     return (
+        <>
+        <h5 className='mt-3'>Service List</h5>
         <div className='row p-5'>
             {
                 services.map(service=><Service
                 service = {service} key ={service._id}></Service>)
             }
         </div>
+        </>
     );
 };
 

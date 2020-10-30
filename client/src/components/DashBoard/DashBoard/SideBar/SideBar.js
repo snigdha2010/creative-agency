@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SideBar.css';
 import { UserContext } from '../../../../App';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faUserPlus, faListAlt, faCommentDots, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const SideBar = () => {
     const { signedInUser, setSignedInUser } = useContext(UserContext);
@@ -15,25 +17,27 @@ const SideBar = () => {
         .then(res=>res.json())
         .then(data => setAdmin(data))
     },[])
-    const style = {
-        textDecoration:'none',
-        color:'black'
-    }
+ 
     return (
         <div className='pt-4'>
              <ul className='list-unstyled'>
                 { !admin&&<div>
-                     <li><Link className='list-unstyled' to='/dashboard'>Order</Link></li>
-                     <li><Link className='list-unstyled' to='/dashboard/customer/service-list'>Service List</Link></li>
-                     <li><Link className='list-unstyled' to='/dashboard/review'>Review</Link></li>
+                    <li className='p-2'><Link className='list-unstyled' to='/dashboard/customer/order'>
+                     <FontAwesomeIcon icon={faShoppingCart} /> <span className='p-2'>Order</span></Link></li>
+                      <li className='p-2'><Link className='list-unstyled' to='/dashboard/customer/service-list'>
+                     <FontAwesomeIcon icon={faListAlt} /> <span className='p-2'>Service List</span></Link></li>
+                     <li className='p-2'><Link className='list-unstyled' to='/dashboard/review'>
+                     <FontAwesomeIcon icon={faCommentDots} /><span className='p-2'>Review</span></Link></li>
                  </div>}
                 { admin &&
                 <div>
-                     <li><Link className='list-unstyled' to='/dashboard/admin/makeAdmin'>Make Admin</Link></li>
-                     <li><Link className='list-unstyled' to='/dashboard/admin/addServices'>Add Services</Link></li>
-                     <li><Link className='list-unstyled' to='/dashboard/admin/service-list'>Service List</Link></li>
-                 </div>}
-
+                     <li className='p-2'><Link className='list-unstyled ' to='/dashboard/admin/service-list'>
+                    <FontAwesomeIcon icon={faListAlt} /> <span className='p-2'>Service List</span></Link></li>
+                     <li className='p-2'><Link className='list-unstyled' to='/dashboard/admin/addServices'>
+                     <FontAwesomeIcon icon={faPlus} /> <span className='p-2'>Add Services</span></Link></li>
+                     <li className='p-2'><Link className='list-unstyled' to='/dashboard/admin/makeAdmin'>
+                     <FontAwesomeIcon icon={faUserPlus} /> <span className='p-2'>Make Admin</span></Link></li>
+                     </div>}
              </ul>
         </div>
     );

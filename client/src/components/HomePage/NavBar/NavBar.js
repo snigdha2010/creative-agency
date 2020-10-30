@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
 
 const NavBar = () => {
-  const {signedInUser, setSignedInUser} = useContext(UserContext);
-  const handleSignOut = ()=>{
-    setSignedInUser({});
-  }
+  const {signedInUser, setSignedInUser, googleSignOut} = useContext(UserContext);
+ 
     return (
           <section className='p-5'>
           <nav className="navbar navbar-expand-lg navbar-light">
@@ -33,12 +31,12 @@ const NavBar = () => {
                   signedInUser && 
                     <li className="nav-item">
                     <span className='pr-2'>{signedInUser.name}</span>
-                    <Link to = '/'><button onClick={handleSignOut} className="btn btn-brand my-2 my-sm-0" type="submit">LogOut</button></Link>
+                    <Link to = '/'><button onClick={googleSignOut} className="btn btn-brand my-2 my-sm-0" type="submit">LogOut</button></Link>
                     
                   </li>
                 }
                 {
-                  !(signedInUser ) &&
+                  !signedInUser  &&
                   <li className="nav-item">
                     <Link to = '/dashboard'><button className="btn btn-brand my-2 my-sm-0" type="submit">Login</button></Link>
                   </li>

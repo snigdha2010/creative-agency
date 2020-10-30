@@ -26,6 +26,9 @@ client.connect(err => {
       const file = req.files.file;
       const name = req.body.name; 
       const email = req.body.email;
+      const design = req.body.design;
+      const detail = req.body.detail;
+      const price = req.body.price;
       const newImg = file.data;
       const encImg = newImg.toString('base64');
 
@@ -34,7 +37,7 @@ client.connect(err => {
           size: file.size,
           img: Buffer.from(encImg,'base64')
       };
-      OrderCollection.insertOne({name,image,email})
+      OrderCollection.insertOne({image,name,email,design,detail,price})
       .then(result =>{
           res.send(result.insertedCount > 0)
       })

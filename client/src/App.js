@@ -9,7 +9,7 @@ import DashBoard from './components/DashBoard/DashBoard/DashBoard';
 import LogIn from './components/LogIn/LogIn';
 import { createContext, useState, useEffect } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import { getCurrentUser } from './components/LogIn/LoginManager';
+import { getCurrentUser, handleSignOut } from './components/LogIn/LoginManager';
 
 
 export const UserContext = createContext();
@@ -22,9 +22,15 @@ function App() {
       setSignedInUser(res)
     })
   }, [])
+  const googleSignOut = () =>{
+     handleSignOut()
+     .then(res => {
+       setSignedInUser(res)
+     })
+  }
   return (
     <div className='app'>
-    <UserContext.Provider value={{signedInUser, setSignedInUser}}  >
+    <UserContext.Provider value={{signedInUser, setSignedInUser, googleSignOut}}  >
     <Router>
       <Switch>
         <Route exact path='/'>

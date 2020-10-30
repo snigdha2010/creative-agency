@@ -16,6 +16,8 @@ const Admin = () => {
     }
 
     return (
+        <>
+        <h5 className='mt-3'>Add Admin</h5>
         <div className='p-5 align-left'> 
             <h5>Email</h5>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -28,10 +30,9 @@ const Admin = () => {
                         <input className='btn' style={{backgroundColor:'#009444',color:"white"}} type="submit" />
                     </div>
                 </div>
-           
-            </form>
-            
+            </form>   
         </div>
+        </>
     );
 };
 

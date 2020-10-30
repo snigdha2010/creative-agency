@@ -33,21 +33,23 @@ const AddServices = () => {
             })
         }
     return (
+        <>
+        <h5 className='mt-3'>Add Services</h5>
         <div>
-              <form className='mt-5' onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <input onBlur={handleBlur} type="text" className="form-control" name="title" placeholder="Enter title" />
-                    </div>
-                    <div className="form-group">
-                        <textarea name="description"  onBlur={handleBlur} col='5' rows='5' className="form-control" placeholder="Enter Designation"></textarea>
-                    </div>
-                    <div className="form-group">
-                        <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Upload image" />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
-            
+            <form className='mt-5' onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <input onBlur={handleBlur} type="text" className="form-control" name="title" placeholder="Enter title" />
+                </div>
+                <div className="form-group">
+                    <textarea name="description"  onBlur={handleBlur} col='5' rows='5' className="form-control" placeholder="Enter Designation"></textarea>
+                </div>
+                <div className="form-group">
+                    <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Upload image" />
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
         </div>
+        </>
     );
 };
 
